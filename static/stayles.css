@@ -1,0 +1,67 @@
+/* static/stayles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #050527;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+    background-color: rgb(31, 19, 136);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 140px;
+    box-shadow: 10px 10px 20px rgb(216, 209, 209);
+    border-radius: 40px;
+    border: 2px solid rgb(221, 216, 216);
+}
+
+h1 {
+    color: #f0f5f5;
+    font-size: 45px;
+}
+
+label {
+    font-size: 40px;
+    margin-right: 10px;
+    color: white;
+}
+
+input[type="text"] {
+    padding: 8px;
+    padding: 10px 15px;
+    border-radius: 12px;
+    line-height: 25px;
+    font-size: 16px;
+    width: 300px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 25px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    
+}
+
+button:hover {
+    background-color: #da113c;
+}
+
+#qr-code-container {
+    margin-top: 40px;
+    padding: 20px 20px;
+}
+
+#qr-code {
+    margin-top: 20px;
+    width: 200px;
+    height: 200px;
+}

@@ -1,0 +1,43 @@
+<!-- qr_generator/templates/qr_generator/generate_qr.html -->
+{% load static %}  <!-- static tagini yuklash -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="{% static 'stayles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>QR Code Generator</h1>
+        <form id="qr-form" method="POST">
+            {% csrf_token %}
+            <label for="qr-text">QR kod uchun matn kiriting:</label>
+            <input type="text" placeholder="Text kiriting" id="qr-text" name="text" required>
+            <button type="submit">QR Kod Yaratish</button>
+        </form>
+        <div id="qr-code-container" style="display:none;">
+            <h2>Yaratilgan QR Kod:</h2>
+            <img id="qr-code" src="" alt="QR Code" style="width:200px; height:200px;">
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('qr-form');
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const formData = new FormData(form);
+            const response = await fetch('/', {
+                method: 'POST',
+                body: formData
+            });
+            const result = await response.json();
+            const qrCodeImage = document.getElementById('qr-code');
+            qrCodeImage.src = result.qr_code_url;
+            document.getElementById('qr-code-container').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
