@@ -1,0 +1,2 @@
+# qrcode
+ Djangoda qr code 
